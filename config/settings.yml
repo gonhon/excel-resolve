@@ -1,0 +1,19 @@
+base: 
+  filePath: "./涌金府水表号.xlsx"
+  tableName: "import_meter_two"
+  skipRows: 1
+  dataBaseName: "mysql"
+databases: 
+  mysql:
+    userName: "root"
+    password: "123456"
+    ip: "127.0.0.1"
+    port: 3306
+    database: "go-zero-book"
+  pgsql:
+    userName: "postgres"
+    password: "123456"
+    ip: "127.0.0.1"
+    port: 5432
+    database: "postgres"
+    currentSchema: "public"

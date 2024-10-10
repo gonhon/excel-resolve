@@ -1,0 +1,13 @@
+base: 
+  filePath: "../../首创-全量发票查询导出结果.xlsx"
+  tableName: "sc_all_01"
+  skipRows: 1
+  dataBaseName: "pgsql"
+databases: 
+  pgsql:
+    userName: "postgres"
+    password: "123456"
+    ip: "127.0.0.1"
+    port: 5432
+    database: "postgres"
+    currentSchema: "public"
