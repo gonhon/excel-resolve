@@ -29,7 +29,7 @@ var rootCmd = &cobra.Command{
 }
 
 func tip() {
-	usageStr := `欢迎使用 excel-resolve 可以使用 excel-resolve help  查看命令`
+	usageStr := `欢迎使用 excel-resolve 可以使用 excel-resolve help  查看命令,详细查看 https://github.com/gonhon/excel-resolve`
 	fmt.Printf("%s\n", usageStr)
 }
 
