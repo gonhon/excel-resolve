@@ -27,15 +27,25 @@ func ProcessGrom() {
 	}
 	db := dt.GetGormDB()
 
+	sr := config.SkipRows
+
 	parse.ParseSheets(config.FilePath, func(rows [][]string, sheetName string, index int) {
-		headers := rows[0]
+		//开始行 也就是实际表头
+		startRow := 0
+		if len(sr) == 1 {
+			startRow = sr[0] - 1
+		} else if len(sr) != 0 {
+			startRow = sr[index] - 1
+		}
+
+		headers := rows[startRow]
 		tableName := fmt.Sprintf("%s_%d", config.TableName, index)
 		fmt.Println("tableName:", tableName)
 		// 建表
-		dt.CreateTable(db, tableName, rows[0])
+		dt.CreateTable(db, tableName, headers)
 
 		var list []map[string]interface{} = make([]map[string]interface{}, 0)
-		for _, row := range rows[1:] {
+		for _, row := range rows[startRow+1:] {
 			entry := make(map[string]interface{})
 			// 数据组装k,v
 			for i, cell := range row {

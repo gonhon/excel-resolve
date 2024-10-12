@@ -4,7 +4,7 @@ type Base struct {
 	FilePath  string
 	TableName string
 	//跳过前面行数
-	SkipRows     int
+	SkipRows     []int
 	DbType       int
 	DataBaseName string
 }

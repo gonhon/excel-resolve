@@ -38,3 +38,14 @@ func TestPgsqlProcess(t *testing.T) {
 	paser("../../config/settings-test-pgsql.yml")
 	ProcessGrom()
 }
+
+func TestPaser(t *testing.T) {
+	paser("../../config/settings.yml")
+	base := config.Configs.Base
+	fmt.Println(base.SkipRows)
+}
+
+func TestMysqlProcessSkipRows(t *testing.T) {
+	paser("../../config/settings-test-mysql.yml")
+	ProcessGrom()
+}
